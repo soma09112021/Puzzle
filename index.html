@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>キッズパズル - 楽しく学ぼう！</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- スタート画面 -->
+        <div id="startScreen" class="screen active">
+            <div class="container">
+                <h1 class="title">🧩 キッズパズル 🧩</h1>
+                <p class="subtitle">たのしくパズルであそぼう！</p>
+                
+                <div class="age-selection">
+                    <h2>なんさいですか？</h2>
+                    <div class="age-buttons">
+                        <button class="age-btn" data-age="3">3さい</button>
+                        <button class="age-btn" data-age="4">4さい</button>
+                        <button class="age-btn" data-age="5">5さい</button>
+                        <button class="age-btn" data-age="6">6さい</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- テーマ選択画面 -->
+        <div id="themeScreen" class="screen">
+            <div class="container">
+                <div class="header">
+                    <button class="back-btn">もどる</button>
+                    <div class="coin-display">
+                        <span class="coin-icon">🪙</span>
+                        <span id="coinCount">0</span>
+                    </div>
+                </div>
+                
+                <h2>なにのパズルであそぶ？</h2>
+                <div class="theme-grid">
+                    <div class="theme-card" data-theme="animals">
+                        <div class="theme-icon">🐶</div>
+                        <span>どうぶつ</span>
+                    </div>
+                    <div class="theme-card" data-theme="vehicles">
+                        <div class="theme-icon">🚗</div>
+                        <span>のりもの</span>
+                    </div>
+                    <div class="theme-card" data-theme="fruits">
+                        <div class="theme-icon">🍎</div>
+                        <span>くだもの</span>
+                    </div>
+                    <div class="theme-card" data-theme="sea">
+                        <div class="theme-icon">🐠</div>
+                        <span>うみのいきもの</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ゲーム画面 -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <button class="back-btn">もどる</button>
+                <div class="game-info">
+                    <span id="currentTheme"></span>
+                </div>
+                <div class="coin-display">
+                    <span class="coin-icon">🪙</span>
+                    <span id="gameCoinCount">0</span>
+                </div>
+            </div>
+            
+            <div class="game-container">
+                <div class="puzzle-area">
+                    <div id="targetArea" class="target-area">
+                        <!-- パズルの完成形エリア -->
+                    </div>
+                    <div id="piecesArea" class="pieces-area">
+                        <!-- パズルピース置き場 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 完成画面 -->
+        <div id="completeScreen" class="screen">
+            <div class="complete-container">
+                <h1 class="complete-title">🎉 やったね！ 🎉</h1>
+                <div class="complete-animation">
+                    <div id="completedPuzzle"></div>
+                </div>
+                <div class="reward">
+                    <p>コインをゲット！</p>
+                    <div class="coin-reward">
+                        <span class="coin-icon large">🪙</span>
+                        <span class="coin-amount">+10</span>
+                    </div>
+                </div>
+                <div class="complete-buttons">
+                    <button id="nextPuzzleBtn" class="btn primary">つぎのパズル</button>
+                    <button id="backToThemeBtn" class="btn secondary">テーマをえらぶ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
